@@ -28,21 +28,21 @@ client.on("ready", () => {
 client.on("guildMemberAdd", async (member) => {
   member.roles.add('role_ID');
 
-  const channelId = "775416030855561278"
+  const channelId = "channel_ID"
   const channel = client.channels.cache.get(channelId);
   if(!channel) return;
   const embed = new Discord.MessageEmbed()
-    .setDescription(`<:IconJoin:791267725325369364> ${member.user.username} a rejoint le serveur !`)
+    .setDescription(`${member.user.username} a rejoint le serveur !`)
     .setColor("#2F3136")
   })
 
 // Message de départ
 client.on('guildMemberRemove', async (member) => {
-  const channelId = "775416030855561278"
+  const channelId = "channel_ID"
   const channel = client.channels.cache.get(channelId);
   if(!channel) return;
   const embed = new Discord.MessageEmbed()
-    .setDescription(`<:IconLeave:791267744897040405> ${member.user.username} à quitté le serveur !`)
+    .setDescription(`${member.user.username} à quitté le serveur !`)
     .setColor("#2F3136")
   channel.send(embed)
 })
